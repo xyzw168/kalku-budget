@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Finance - Kalkulator Kuliah & Kos</title>
-    <!-- Library Eksternal untuk Export Excel & Gambar PNG -->
+    <title>Kalkulator Alokasi Dana</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -21,10 +20,8 @@
             --text-main: #1e293b;
             --text-muted: #64748b;
             --border: #e2e8f0;
-            
-            /* Warna khusus tema nota lucu */
-            --receipt-bg: #fffdf9; /* Putih gading hangat */
-            --receipt-text: #4338ca; /* Ungu gelap estetik */
+            --receipt-bg: #fffdf9;
+            --receipt-text: #4338ca; 
             --receipt-accent: #c7d2fe; 
         }
 
@@ -75,10 +72,8 @@
         .summary-row { display: flex; justify-content: space-between; color: var(--text-muted); }
         .summary-row.total { color: var(--text-main); font-weight: 700; font-size: 16px; }
 
-        /* ================= DESAIN NOTA LUCU / CUTE JOURNAL INTERFACE ================= */
         .receipt-container-box { width: 100%; max-width: 550px; margin-top: 10px; text-align: center; }
         
-        /* Kertas Nota utama bergaya retro cute */
         .receipt-preview { 
             background: var(--receipt-bg); 
             color: var(--receipt-text); 
@@ -91,9 +86,8 @@
             overflow: hidden;
         }
 
-        /* Dekorasi pita hiasan di pojok nota */
         .receipt-preview::before {
-            content: "✨ CUTE BUDGET ✨";
+            content: "✨ - ✨";
             position: absolute;
             top: 12px;
             right: -30px;
@@ -106,7 +100,6 @@
             border: 1px dashed #854d0e;
         }
 
-        /* Pinggiran gerigi sobekan kertas di bawah nota */
         .receipt-zigzag-bottom {
             width: 100%;
             height: 16px;
@@ -115,11 +108,10 @@
             background-size: 16px 16px;
             position: relative;
             margin-top: -2px;
-            filter: drop-shadow(0 3px 0 var(--receipt-text)); /* Memberi border bawah gerigi */
+            filter: drop-shadow(0 3px 0 var(--receipt-text)); 
             z-index: 2;
         }
         
-        /* Shadow layer pelengkap efek potongan kertas */
         .receipt-zigzag-border-fix {
             width: 100%;
             height: 18px;
@@ -146,7 +138,6 @@
         .receipt-divider { border-top: 2px dashed var(--receipt-text); margin: 12px 0; }
         .receipt-total-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; padding: 4px 0; }
         
-        /* Highlight khusus sisa bersih akhir */
         .receipt-grand-total { background: #fef08a; padding: 6px 10px; border-radius: 8px; border: 2px solid var(--receipt-text); margin-top: 5px; }
         
         .receipt-footer { text-align: center; margin-top: 30px; font-size: 12px; border-top: 2px dashed var(--receipt-text); padding-top: 18px; line-height: 1.5; }
@@ -168,8 +159,8 @@
 
 <div class="app-container">
     <header>
-        <h1>Smart Finance</h1>
-        <p>Alokasi Dana Kuliah & Kos Mandiri</p>
+        <h1>Kalkulator</h1>
+        <p>Budgeting</p>
     </header>
 
     <div class="dashboard">
