@@ -220,17 +220,15 @@
     </div>
 </div>
 
-<!-- CONTAINER PREVIEW NOTA LUCU -->
 <div class="receipt-container-box">
     <div style="margin-bottom: 15px;">
-        <h3 style="font-size: 15px; color: var(--text-main);">✨ Live Preview Nota Lucu ✨</h3>
+        <h3 style="font-size: 15px; color: var(--text-main);">Preview Nota</h3>
     </div>
     
-    <!-- Wrapper utama yang ditangkap oleh html2canvas -->
     <div id="receipt-capture-wrapper" style="background: transparent; padding: 10px;">
         <div id="receipt-capture-target" class="receipt-preview">
             <div class="receipt-header">
-                <h2>· SMART FINANCE ·</h2>
+                <h2>· Kalkulator Budgeting ·</h2>
                 <p>✦ Catatan Perencanaan Keuangan ✦</p>
             </div>
             <div class="receipt-meta">
@@ -246,7 +244,6 @@
                     </tr>
                 </thead>
                 <tbody id="rcp-items-body">
-                    <!-- Diisi otomatis oleh JavaScript -->
                 </tbody>
             </table>
             <div class="receipt-divider"></div>
@@ -267,7 +264,6 @@
                 <p>🧸 Semangat Mengatur Keuangan! 🧸<br>Don't forget to be awesome everyday.</p>
             </div>
         </div>
-        <!-- Komponen Gerigi Sobekan Kertas -->
         <div class="receipt-zigzag-bottom"></div>
         <div class="receipt-zigzag-border-fix"></div>
     </div>
@@ -444,18 +440,15 @@
         perbaruiLiveNota();
     }
 
-    // FOTO DAN SAVE NOTA CUTE JADI PNG
     function simpanNotaSebagaiGambar() {
-        // Menargetkan elemen pembungkus luar agar efek gerigi bawah ikut terpotret utuh
         const target = document.getElementById('receipt-capture-wrapper');
         const inputPembuat = document.getElementById('rcp-input-pembuat');
         
-        // Hapus garis titik-titik input sementara agar terlihat clean di foto PNG
         inputPembuat.style.borderBottom = "none";
 
         html2canvas(target, {
             scale: 2, 
-            backgroundColor: null, // Membuat area luar gerigi transparan jika di-save
+            backgroundColor: null,
             logging: false
         }).then(canvas => {
             inputPembuat.style.borderBottom = "2px dotted var(--receipt-text)";
@@ -473,7 +466,6 @@
         });
     }
 
-    // EXPORT EXCEL
     async function exportKeExcel() {
         const danaAwal = teksTitikKeAngka(document.getElementById('danaAwal').value);
         const namaInputs = document.querySelectorAll('.item-name');
@@ -488,7 +480,7 @@
         const titleCell = worksheet.getCell('A1');
         titleCell.value = 'LAPORAN RENCANA ANGGARAN FINANSIAL';
         titleCell.font = { name: 'Calibri', size: 14, bold: true, color: { argb: 'FFFFFFFF' } };
-        titleCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '4F46E5' } }; // Tema Ungu Indigo Match
+        titleCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '4F46E5' } }; 
         titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
         worksheet.getRow(1).height = 35;
 
